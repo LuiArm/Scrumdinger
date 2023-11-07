@@ -25,7 +25,7 @@ struct CardView: View {
                     .labelStyle(.trailingIcon)
             }
         }
-        .padding()
+        .padding(.all, 25)
         .foregroundStyle(scrum.theme.accentColor)
         .font(.caption)
         .frame(width: 400,height: 60)
