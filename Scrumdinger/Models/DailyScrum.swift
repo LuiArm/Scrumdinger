@@ -8,12 +8,46 @@
 import Foundation
 
 
-struct DailyScrum {
+struct DailyScrum: Identifiable {
+    let id: UUID
     var title: String
-    var attendees: [String]
+    var attendees: [Attendee]
     var lengthInMinutes: Int
     var theme: Theme
+    
+    
+    //initializer to assign default value to id property
+    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+        self.id = id
+        self.title = title
+        self.attendees = attendees.map { Attendee(name: $0)}
+        self.lengthInMinutes = lengthInMinutes
+        self.theme = theme
+    }
 }
+
+// Scrum attendees
+extension DailyScrum {
+    struct Attendee: Identifiable {
+        let id: UUID
+        let name: String
+        
+        //initializer to assign default value to id property
+        init(id: UUID = UUID(), name: String) {
+            self.id = id
+            self.name = name
+        }
+    }
+    
+    //empty scrum
+
+     static var emptyScrum: DailyScrum {
+        DailyScrum(title: "", attendees: [], lengthInMinutes: 5, theme: .sky)
+    }
+
+}
+
+
 
 // Sample data for daily scrum
 

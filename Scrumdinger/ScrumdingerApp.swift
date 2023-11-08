@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct ScrumdingerApp: App {
     var body: some Scene {
+        //views added to WindowGroup scene builder are presented in a window that fills the devices entire screen
         WindowGroup {
-            MeetingView()
+            //Making ScrumsView the root view
+            ScrumsView(scrums: DailyScrum.sampleData)
         }
     }
 }
