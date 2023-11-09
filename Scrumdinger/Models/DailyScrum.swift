@@ -13,6 +13,17 @@ struct DailyScrum: Identifiable {
     var title: String
     var attendees: [Attendee]
     var lengthInMinutes: Int
+    //Adding double-precision representation of scrums length to bind to slider
+    var lengthInMinutesAsDouble: Double {
+        //getter that returns the length of a scrum as a double
+        get {
+            Double(lengthInMinutes)
+        }
+        // slider changes value of lengthInMinutesAsDouble, convert double to Int, and update lengthInMinutes property
+        set {
+            lengthInMinutes = Int(newValue)
+        }
+    }
     var theme: Theme
     
     
