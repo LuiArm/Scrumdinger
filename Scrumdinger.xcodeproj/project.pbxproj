@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F6186CDC2AFACC220090DB19 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6186CDB2AFACC220090DB19 /* DetailView.swift */; };
+		F64ED9642B00637C009649B3 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64ED9632B00637C009649B3 /* MeetingHeaderView.swift */; };
 		F65065532AF193E700E1159B /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65065522AF193E700E1159B /* ScrumdingerApp.swift */; };
 		F65065552AF193E700E1159B /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65065542AF193E700E1159B /* MeetingView.swift */; };
 		F65065572AF193E800E1159B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65065562AF193E800E1159B /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		F6186CDB2AFACC220090DB19 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F64ED9632B00637C009649B3 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		F650654F2AF193E700E1159B /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65065522AF193E700E1159B /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		F65065542AF193E700E1159B /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				F6CF0FED2AFB5D0B00469228 /* DetailEditView.swift */,
 				F6B4A38D2AFDF290006F6205 /* ThemeView.swift */,
 				F6B4A38F2AFDF8AC006F6205 /* ThemePicker.swift */,
+				F64ED9632B00637C009649B3 /* MeetingHeaderView.swift */,
 				F65065562AF193E800E1159B /* Assets.xcassets */,
 				F65065582AF193E800E1159B /* Preview Content */,
 			);
@@ -175,6 +178,7 @@
 				F6B4A3902AFDF8AC006F6205 /* ThemePicker.swift in Sources */,
 				F65065972AF475C300E1159B /* DailyScrum.swift in Sources */,
 				F6186CDC2AFACC220090DB19 /* DetailView.swift in Sources */,
+				F64ED9642B00637C009649B3 /* MeetingHeaderView.swift in Sources */,
 				F6CF0FEE2AFB5D0B00469228 /* DetailEditView.swift in Sources */,
 				F6D878E12AF6E133009DD99E /* TrailingIconLabelStyle.swift in Sources */,
 				F65065622AF427CD00E1159B /* Theme.swift in Sources */,
