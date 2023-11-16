@@ -25,6 +25,7 @@ struct DailyScrum: Identifiable {
         }
     }
     var theme: Theme
+    var history: [History] = []
     
     
     //initializer to assign default value to id property

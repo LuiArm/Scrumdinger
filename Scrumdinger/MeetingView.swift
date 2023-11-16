@@ -16,6 +16,23 @@ struct MeetingView: View {
     
     private var player: AVPlayer { AVPlayer.sharedDingPlayer}
     
+    //func to start timer for new scrum
+    private func startScrum() {
+        scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+        scrumTimer.speakerChangedAction = {
+            player.seek(to: .zero)
+            player.play()
+        }
+        scrumTimer.startScrum()
+    }
+    
+    // func to end timer and to history array
+    private func endScrum() {
+        scrumTimer.stopScrum()
+        let newHistory = History(attendees: scrum.attendees)
+        scrum.history.insert(newHistory, at: 0)
+    }
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
@@ -31,15 +48,10 @@ struct MeetingView: View {
     .padding()
     .foregroundStyle(Color(scrum.theme.accentColor))
     .onAppear{
-        scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
-        scrumTimer.speakerChangedAction = {
-            player.seek(to: .zero)
-            player.play()
-        }
-        scrumTimer.startScrum()
+       startScrum()
     }
     .onDisappear{
-        scrumTimer.stopScrum()
+        endScrum()
     }
     .navigationBarTitleDisplayMode(.inline)
     }
