@@ -17,11 +17,11 @@ struct SpeakerArc: Shape {
     }
     
     private var startAngle: Angle {
-        Angle(degrees: degreesPerSpeaker * Double(speakerIndex) + 1.0)
+        Angle(degrees: degreesPerSpeaker * Double(speakerIndex) )
     }
     
     private var endAngle: Angle {
-        Angle(degrees: startAngle.degrees + degreesPerSpeaker - 1.0)
+        Angle(degrees: startAngle.degrees + degreesPerSpeaker )
     }
     
     func path(in rect: CGRect) -> Path {

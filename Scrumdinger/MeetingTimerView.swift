@@ -27,13 +27,23 @@ struct MeetingTimerView: View {
                 .accessibilityElement(children: .combine)
                 .foregroundStyle(Color(theme.accentColor))
             }
+            .overlay {
+                ForEach(speakers) {speaker in
+                    if speaker.isCompleted, let index = speakers.firstIndex(where: {$0.id == speaker.id}){
+                        SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
+                            .rotation(Angle(degrees: -90))
+                            .stroke(theme.mainColor, lineWidth: 12)
+                    }
+                }
+            }
+            .padding(.horizontal)
     }
 }
 
-#Preview {
-     var speakers: [ScrumTimer.Speaker] {
-           [ScrumTimer.Speaker(name: "Bill", isCompleted: true), ScrumTimer.Speaker(name: "Cathy", isCompleted: false)]
-       }
-    
-    MeetingTimerView(speakers: speakers, theme: .yellow)
-}
+//#Preview {
+//     var speakers: [ScrumTimer.Speaker] {
+//           [ScrumTimer.Speaker(name: "Bill", isCompleted: true), ScrumTimer.Speaker(name: "Cathy", isCompleted: false)]
+//       }
+//    
+//    MeetingTimerView(speakers: speakers, theme: .yellow)
+//}
