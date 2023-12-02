@@ -14,6 +14,11 @@ struct MeetingView: View {
     //source of truth
     @StateObject var scrumTimer = ScrumTimer()
     
+    //The initializer requests access to the speech recognizer and microphone the first time that the system calls the object.
+    @StateObject var speechRecognizer = SpeechRecognizer()
+    
+    @State private var isRecording = false
+    
     private var player: AVPlayer { AVPlayer.sharedDingPlayer}
     
     //func to start timer for new scrum
@@ -23,12 +28,17 @@ struct MeetingView: View {
             player.seek(to: .zero)
             player.play()
         }
+        speechRecognizer.resetTranscript()
+        speechRecognizer.startTranscribing()
+        isRecording = true
         scrumTimer.startScrum()
     }
     
     // func to end timer and to history array
     private func endScrum() {
         scrumTimer.stopScrum()
+        speechRecognizer.stopTranscribing()
+        isRecording = false
         let newHistory = History(attendees: scrum.attendees)
         scrum.history.insert(newHistory, at: 0)
     }
